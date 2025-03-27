@@ -3,7 +3,7 @@ const questions = [
         question: "Which planet is known as the Red Planet?",
         answers: [
             {text: "Earth", correct: false},
-            {text: "Jupitar", correct: false},
+            {text: "Jupiter", correct: false},
             {text: "Mars", correct: true},
             {text: "Venus", correct: false},
         ]
@@ -49,7 +49,7 @@ function startQuiz(){
     score = 0;
     mainButton.innerHTML = "Next";
     showQuestion();
-}
+};
 
 function showQuestion(){
     resetState();
@@ -67,7 +67,7 @@ function showQuestion(){
         }
         button.addEventListener("click", selectAnswer);
     })
-}
+};
 
     function resetState(){
         mainButton.style.display = "none";
@@ -91,14 +91,14 @@ function showQuestion(){
             button.disabled = true;
         });
         mainButton.style.display = "block";
-    }
+    };
 
     function showScore(){
         resetState();
         questionList.innerHTML = `You Scored ${score} out of ${questions.length}`;
         mainButton.innerHTML = "Play Again";
         mainButton.style.display = "block";
-    }
+    };
 
     function handleMainButton(){
         questionsIndex++;
@@ -107,7 +107,7 @@ function showQuestion(){
         }else {
             showScore();
         }
-    }
+    };
 
     mainButton.addEventListener("click", () => {
         if(questionsIndex < questions.length){
@@ -116,7 +116,7 @@ function showQuestion(){
         else {
             startQuiz();
         }
-    })
-
+    });
+    startQuiz();
 
 
